@@ -1,0 +1,2 @@
+# lotide
+A Lodash clone
