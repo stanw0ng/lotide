@@ -1,6 +1,29 @@
 // FUNCTION IMPLEMENTATION
+// FUNCTION IMPLEMENTATION
 const assertEqual = function(actual, expected) {
-  actual === expected ? console.log(`👍 Assertion Passed: ${actual} === ${expected}`) : console.log(`👎 Assertion Failed: ${actual} !== ${expected}`);
+  let message = '';
+
+  if (actual === undefined && expected === undefined) {
+    message += '💥 Error: actual and expected values not provided';
+    return message;
+  }
+
+  if (expected === undefined) {
+    message += '💥 Error: expected value not provided';
+    return message;
+  }
+
+  if (actual === expected) {
+    message += `👍 Assertion Passed: ${actual} === ${expected}`;
+    return message;
+  }
+  
+  if (actual !== expected) {
+    message += `👎 Assertion Failed: ${actual} !== ${expected}`;
+    return message;
+  }
+
+  return message;
 };
 
 const tail = function(array) {
