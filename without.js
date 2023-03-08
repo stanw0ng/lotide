@@ -1,3 +1,4 @@
+//for last case
 const assertArraysEqual = function(array1, array2) {
   let message = "";
 
@@ -16,3 +17,21 @@ const assertArraysEqual = function(array1, array2) {
   message += `👍 Assertion Passed: the arrays are equal`;
   return message;
 };
+
+const without = function(array, itemsToRemove) {
+  const cleanArray = [];
+
+  for (let i = 0; i < array.length; i++) {
+    const currentItem = array[i];
+
+    if (!itemsToRemove.includes(currentItem)) {
+      cleanArray.push(currentItem);
+    }
+  }
+
+  return cleanArray;
+};
+
+const words = ["hello", "world", "lighthouse"];
+without(words, ["lighthouse"]);
+assertArraysEqual(words, ["hello", "world", "lighthouse"]);
