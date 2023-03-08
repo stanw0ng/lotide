@@ -1,11 +1,6 @@
 const assertEqual = function(actual, expected) {
   let message = '';
 
-  if (expected === undefined) {
-    message += '💥 Error: expected value not provided';
-    return message;
-  }
-
   if (actual === expected) {
     message += `👍 Assertion Passed: ${actual} === ${expected}`;
     return message;
