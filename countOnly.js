@@ -1,18 +1,17 @@
+// assertEqual for checking
+
 const assertEqual = function(actual, expected) {
-  let message = '';
 
   if (actual === expected) {
-    message += `👍 Assertion Passed: ${actual} === ${expected}`;
-    return message;
+    console.log(`👍 Assertion Passed: ${actual} === ${expected}`);
   }
   
   if (actual !== expected) {
-    message += `👎 Assertion Failed: ${actual} !== ${expected}`;
-    return message;
+    console.log(`👎 Assertion Failed: ${actual} !== ${expected}`);
   }
-
-  return message;
 };
+
+// countOnly function
 
 const countOnly = function(allItems, itemsToCount) {
   const results = {};

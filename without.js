@@ -1,22 +1,30 @@
-//for last case
-const assertArraysEqual = function(array1, array2) {
-  let message = "";
+//eqArray base logic
 
+const eqArrays = function(array1, array2) {
   if (array1.length !== array2.length) {
-    message += `👎 Assertion Failed: the arrays are not the same `;
-    return message;
+    return false;
   }
 
   for (let i = 0; i < array1.length; i++) {
     if (array1[i] !== array2[i]) {
-      message += `👎 Assertion Failed: the arrays are not the same`;
-      return message;
+      return false;
     }
   }
 
-  message += `👍 Assertion Passed: the arrays are equal`;
-  return message;
+  return true;
 };
+
+//assertArraysEqual function
+
+const assertArraysEqual = function(array1, array2) {
+  if (eqArrays(array1, array2)) {
+    console.log(`👍 Assertion: Passed, ${array1} === ${array2}`);     // Maybe not necessary to see every value of the arrays?
+  } else {
+    console.log(`👎 Assertion: Failed, ${array1} !== ${array2}`);
+  }
+};
+
+// without function
 
 const without = function(array, itemsToRemove) {
   const cleanArray = [];

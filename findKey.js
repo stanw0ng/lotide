@@ -1,4 +1,5 @@
-//assertEqual
+// assertEqual for testing
+
 const assertEqual = function(actual, expected) {
   let message = '';
 
@@ -15,7 +16,7 @@ const assertEqual = function(actual, expected) {
   return message;
 };
 
-//findKey
+// findKey function
 const findKey = (obj, callback) => {
   for (let key in obj) {
     if (callback(obj[key])) {

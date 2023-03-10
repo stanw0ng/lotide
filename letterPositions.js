@@ -1,21 +1,30 @@
-const assertArraysEqual = function(array1, array2) {
-  let message = "";
+//assertArraysEqual for checking
 
+const assertArraysEqual = function(array1, array2) {
+  if (eqArrays(array1, array2)) {
+    console.log(`👍 Assertion: Passed, ${array1} === ${array2}`);
+  } else {
+    console.log(`👎 Assertion: Failed, ${array1} !== ${array2}`);
+  }
+};
+
+//eqArrays for checking
+
+const eqArrays = function(array1, array2) {
   if (array1.length !== array2.length) {
-    message += `👎 Assertion Failed: the arrays are not the same `;
-    return message;
+    return false;
   }
 
   for (let i = 0; i < array1.length; i++) {
     if (array1[i] !== array2[i]) {
-      message += `👎 Assertion Failed: the arrays are not the same`;
-      return message;
+      return false;
     }
   }
 
-  message += `👍 Assertion Passed: the arrays are equal`;
-  return message;
+  return true;
 };
+
+// letterPositions function
 
 const letterPositions = function(sentence) {
   const positions = {};
@@ -31,4 +40,4 @@ const letterPositions = function(sentence) {
 };
 
 console.log(letterPositions("hello"));
-console.log(assertArraysEqual(letterPositions("hello").o, [1]));
+assertArraysEqual(letterPositions("hello").o, [1]);

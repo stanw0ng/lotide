@@ -1,4 +1,4 @@
-//eqArrays for checking objects with array values
+// eqArrays for checking objects with array values
 const eqArrays = function(array1, array2) {
   if (array1.length !== array2.length) {
     return false;
@@ -13,24 +13,19 @@ const eqArrays = function(array1, array2) {
   return true;
 };
 
-//assertEqual for testing
+// assertEqual for testing
 const assertEqual = function(actual, expected) {
-  let message = '';
 
   if (actual === expected) {
-    message += `👍 Assertion Passed: ${actual} === ${expected}`;
-    return message;
+    console.log(`👍 Assertion Passed: ${actual} === ${expected}`);
   }
   
   if (actual !== expected) {
-    message += `👎 Assertion Failed: ${actual} !== ${expected}`;
-    return message;
+    console.log(`👎 Assertion Failed: ${actual} !== ${expected}`);
   }
-
-  return message;
 };
 
-//eqObjects function
+// eqObjects function
 
 const eqObjects = function(object1, object2) {
   const firstKeys = Object.keys(object1);
