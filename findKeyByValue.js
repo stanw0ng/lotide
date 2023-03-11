@@ -17,10 +17,12 @@ const findKeyByValue = function(object, value) {
   const keys = Object.keys(object);
 
   for (let key of keys) {
-    if (object[key] === value) {
-      result += key;
-      break;
+    if (object[key] !== value) {
+      continue;
     }
+
+    result += key;
+    break;
   }
 
   return result;
