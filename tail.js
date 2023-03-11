@@ -13,7 +13,8 @@ const assertEqual = function(actual, expected) {
 
 const tail = function(array) {
   if (!Array.isArray(array)) {
-    return 'Invalid input. Please enter an array.';
+    console.log('Invalid input. Please enter an array.');
+    return;
   }
   if (array.length === 0 || array.length === 1) {
     return [];

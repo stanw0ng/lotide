@@ -22,10 +22,8 @@ const assertArraysEqual = function(array1, array2) {
     return;
   }
   
-  console.log(`👍 Assertion: Passed, ${array1} === ${array2}`);     // Maybe not necessary to see every value of the arrays?
+  console.log(`👍 Assertion: Passed, ${array1} === ${array2}`);
 };
-
-assertArraysEqual([1, 2, 3], [1, 2, 3]);
 
 // map function
 const map = function(array, callback) {
