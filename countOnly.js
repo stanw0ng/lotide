@@ -7,7 +7,7 @@ const assertEqual = function(actual, expected) {
     return;
   }
 
-  console.log(`👍 Assertion Passed: ${actual} === ${expected}`);
+  console.log(`👍 Assertion Passed: ${actual} === ${expected}`)
 };
 
 // countOnly function
@@ -17,11 +17,11 @@ const countOnly = function(allItems, itemsToCount) {
 
   for (const item of allItems) {
     if (itemsToCount[item]) {
-      if (results[item]) {
-        results[item] += 1;
-      } else {
-        results[item] = 1;
+      if (!results[item]) {
+        results[item] = 0;
       }
+      
+      results[item] ++;
     }
   }
 
