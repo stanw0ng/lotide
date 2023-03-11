@@ -1,13 +1,12 @@
 // assertEqual function for checking
 const assertEqual = function(actual, expected) {
 
-  if (actual === expected) {
-    console.log(`👍 Assertion Passed: ${actual} === ${expected}`);
-  }
-  
   if (actual !== expected) {
     console.log(`👎 Assertion Failed: ${actual} !== ${expected}`);
+    return;
   }
+
+  console.log(`👍 Assertion Passed: ${actual} === ${expected}`);
 };
 
 // eqArray function

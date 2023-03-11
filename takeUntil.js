@@ -1,14 +1,4 @@
-//assertArraysEqual for checking
-
-const assertArraysEqual = function(array1, array2) {
-  if (eqArrays(array1, array2)) {
-    console.log(`👍 Assertion: Passed, ${array1} === ${array2}`);
-  } else {
-    console.log(`👎 Assertion: Failed, ${array1} !== ${array2}`);
-  }
-};
-
-//eqArrays for checking
+//eqArray base logic
 
 const eqArrays = function(array1, array2) {
   if (array1.length !== array2.length) {
@@ -24,10 +14,23 @@ const eqArrays = function(array1, array2) {
   return true;
 };
 
+//assertArraysEqual function
+
+const assertArraysEqual = function(array1, array2) {
+  if (!eqArrays(array1, array2)) {
+    console.log(`👎 Assertion: Failed, ${array1} !== ${array2}`);
+    return;
+  }
+  
+  console.log(`👍 Assertion: Passed, ${array1} === ${array2}`);     // Maybe not necessary to see every value of the arrays?
+};
+
+assertArraysEqual([1, 2, 3], [1, 2, 3]);
+
 //takeUntil function
 
 const takeUntil = function(array, callback) {
-  for (let index in array) {
+  for (const index in array) {
     if (callback(array[index])) { // the return built into the arrow function of the callback breaks the loop once condition is met
       const stopAt = index;
       const newLength = array.length - index;

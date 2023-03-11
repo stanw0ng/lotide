@@ -1,14 +1,4 @@
-//assertArraysEqual for checking
-
-const assertArraysEqual = function(array1, array2) {
-  if (eqArrays(array1, array2)) {
-    console.log(`👍 Assertion: Passed, ${array1} === ${array2}`);
-  } else {
-    console.log(`👎 Assertion: Failed, ${array1} !== ${array2}`);
-  }
-};
-
-//eqArrays for checking
+//eqArray base logic
 
 const eqArrays = function(array1, array2) {
   if (array1.length !== array2.length) {
@@ -24,12 +14,25 @@ const eqArrays = function(array1, array2) {
   return true;
 };
 
+//assertArraysEqual function
+
+const assertArraysEqual = function(array1, array2) {
+  if (!eqArrays(array1, array2)) {
+    console.log(`👎 Assertion: Failed, ${array1} !== ${array2}`);
+    return;
+  }
+  
+  console.log(`👍 Assertion: Passed, ${array1} === ${array2}`);     // Maybe not necessary to see every value of the arrays?
+};
+
+assertArraysEqual([1, 2, 3], [1, 2, 3]);
+
 // letterPositions function
 
 const letterPositions = function(sentence) {
   const positions = {};
   for (let i = 0; i < sentence.length; i++) {
-    let letter = sentence[i];
+    const letter = sentence[i];
     if (positions[letter]) {
       positions[letter].push(i);
     } else {
