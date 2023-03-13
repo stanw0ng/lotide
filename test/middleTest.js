@@ -1,24 +1,26 @@
 // import
-const assertArraysEqual = require("../assertArrayEqual");
+const assert = require('chai').assert;
 const middle = require("../middle");
 
 // TEST CODE
-let result = middle([1, 2, 3]);
-console.log(result);
-assertArraysEqual(result, [2]);
+describe("The function tail()", () => {
+  it("returns [2] for [1, 2, 3]", () => {
+    assert.deepEqual(middle([1, 2, 3]), [2]);
+  });
 
-result = middle([1, 2, 3, true, 5, 6, 7]);
-console.log(result);
-assertArraysEqual(result, [true]);
+  it("returns [true] for [1, 2, 3, true, 5, 6, 7]", () => {
+    assert.deepEqual(middle([1, 2, 3, true, 5, 6, 7]), [true]);
+  });
 
-result = middle([1]);
-console.log(result);
-assertArraysEqual(result, []);
+  it("returns [] for [1]", () => {
+    assert.deepEqual(middle([1]), []);
+  });
 
-result = middle([1, 2, 3, true, 5, 6]);
-console.log(result);
-assertArraysEqual(result, []);
+  it("returns [] for [1, 2, 3, true, 5, 6]", () => {
+    assert.deepEqual(middle([1, 2, 3, true, 5, 6]), []);
+  });
 
-result = middle([]);
-console.log(result);
-assertArraysEqual(result, []);
+  it("returns [] for []", () => {
+    assert.deepEqual(middle([]), []);
+  });
+});
