@@ -1,6 +1,6 @@
 // import assertEqual
 const assertEqual = require('../assertEqual');
-const tail = require('../tail')
+const tail = require('../tail');
 
 // Test Case 1: Check the returned array elements
 const result = tail(["Hello", "Lighthouse", "Labs"]);
