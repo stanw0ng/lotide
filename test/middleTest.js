@@ -12,3 +12,6 @@ assertArraysEqual(result, [true]);
 result = middle([1, 2, 3, true, 5, 6]);
 console.log(result);
 assertArraysEqual(result, []);
+result = middle([]);
+console.log(result);
+assertArraysEqual(result, []);
