@@ -1,4 +1,4 @@
-// import assertEqual
+// import
 const assertEqual = require('../assertEqual');
 const tail = require('../tail');
 

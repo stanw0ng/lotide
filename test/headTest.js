@@ -1,4 +1,4 @@
-// import assertEqual
+// import
 const assertHead = require('../head');
 const assertEqual = require('../assertEqual')
 
