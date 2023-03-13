@@ -1,5 +1,4 @@
 // assertHead function
-
 const assertHead = function(array) {
   if (!Array.isArray(array)) {
     console.log("💥 Invalid input. Please enter an array.");
