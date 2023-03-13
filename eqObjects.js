@@ -1,31 +1,7 @@
-// eqArrays for checking objects with array values
-const eqArrays = function(array1, array2) {
-  if (array1.length !== array2.length) {
-    return false;
-  }
-
-  for (let i = 0; i < array1.length; i++) {
-    if (array1[i] !== array2[i]) {
-      return false;
-    }
-  }
-
-  return true;
-};
-
-// assertEqual for testing
-const assertEqual = function(actual, expected) {
-
-  if (actual !== expected) {
-    console.log(`👎 Assertion Failed: ${actual} !== ${expected}`);
-    return;
-  }
-
-  console.log(`👍 Assertion Passed: ${actual} === ${expected}`);
-};
+// import
+const eqArrays = require('./eqArray')
 
 // eqObjects function
-
 const eqObjects = function(object1, object2) {
   const firstKeys = Object.keys(object1);
   const secondKeys = Object.keys(object2);
@@ -47,9 +23,11 @@ const eqObjects = function(object1, object2) {
   return true;
 };
 
-const multiColorShirtObject = { colors: ["red", "blue"], size: "medium" };
-const anotherMultiColorShirtObject = { size: "medium", colors: ["red", "blue"] };
-console.log(eqObjects(multiColorShirtObject  , anotherMultiColorShirtObject));
+module.exports = eqObjects;
 
-const longSleeveMultiColorShirtObject = { size: "medium", colors: ["red", "blue"], sleeveLength: "long" };
-console.log(eqObjects(multiColorShirtObject  , longSleeveMultiColorShirtObject));
+// const multiColorShirtObject = { colors: ["red", "blue"], size: "medium" };
+// const anotherMultiColorShirtObject = { size: "medium", colors: ["red", "blue"] };
+// console.log(eqObjects(multiColorShirtObject  , anotherMultiColorShirtObject));
+
+// const longSleeveMultiColorShirtObject = { size: "medium", colors: ["red", "blue"], sleeveLength: "long" };
+// console.log(eqObjects(multiColorShirtObject  , longSleeveMultiColorShirtObject));

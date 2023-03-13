@@ -1,34 +1,4 @@
-//eqArray base logic
-
-const eqArrays = function(array1, array2) {
-  if (array1.length !== array2.length) {
-    return false;
-  }
-
-  for (let i = 0; i < array1.length; i++) {
-    if (array1[i] !== array2[i]) {
-      return false;
-    }
-  }
-
-  return true;
-};
-
-//assertArraysEqual function
-
-const assertArraysEqual = function(array1, array2) {
-  if (!eqArrays(array1, array2)) {
-    console.log(`👎 Assertion: Failed, ${array1} !== ${array2}`);
-    return;
-  }
-  
-  console.log(`👍 Assertion: Passed, ${array1} === ${array2}`);
-};
-
-assertArraysEqual([1, 2, 3], [1, 2, 3]);
-
 // without function
-
 const without = function(array, itemsToRemove) {
   const cleanArray = [];
 
@@ -43,6 +13,8 @@ const without = function(array, itemsToRemove) {
   return cleanArray;
 };
 
-const words = ["hello", "world", "lighthouse"];
-without(words, ["lighthouse"]);
-assertArraysEqual(words, ["hello", "world", "lighthouse"]);
+module.exports = without;
+
+// const words = ["hello", "world", "lighthouse"];
+// without(words, ["lighthouse"]);
+// assertArraysEqual(words, ["hello", "world", "lighthouse"]);

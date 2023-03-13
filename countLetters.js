@@ -15,5 +15,7 @@ const letterCount = function(string) {
   return result;
 };
 
-console.log(letterCount("honky tonk"));
-console.log(letterCount("the lazy fox jumps over the brown dog"));
+module.exports = letterCount;
+
+// console.log(letterCount("honky tonk"));
+// console.log(letterCount("the lazy fox jumps over the brown dog"));
